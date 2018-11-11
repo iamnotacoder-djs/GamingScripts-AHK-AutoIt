@@ -1,4 +1,4 @@
-# HeroPicker Owerwatch
+# HeroPicker Overwatch
 Скрипт автоматического пика персонажей
 
 Видео: https://www.youtube.com/watch?v=j3jgdCkroEQ
