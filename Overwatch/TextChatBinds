@@ -1,0 +1,42 @@
+#singleInstance, force
+
+$Numpad4::matchChat("hf")
+$Numpad5::teamChat("gr")
+$Numpad6::matchChat("gg gl next")
+
+teamChat(text){
+	Sleep, 100
+	SendInput, {NumpadMult} ;Open the match chat
+	Sleep, 100
+	
+	SendInput, {tab} ;Select the team chat
+  ;If ScrollLock is on press tab again (for grouped players)
+	If GetKeyState("ScrollLock", "T"){
+	 	SendInput, {tab}
+	}
+	Sleep, 10	
+	
+	Loop, parse, Text, ;parse all chars in string 1 by 1
+	{
+    SendInput, %A_LoopField%
+		sleep, 1
+	}
+
+	Sleep, 10
+	SendInput, {enter} ;press enter 
+}
+
+matchChat(text){
+	Sleep, 100
+	SendInput, {NumpadMult} ;Open the match chat
+	Sleep, 100
+	
+	Loop, parse, Text, ;parse all chars in string 1 by 1
+	{
+    SendInput, %A_LoopField%
+		sleep, 1
+	}
+
+	Sleep, 10
+	SendInput, {enter} ;press enter 
+}
